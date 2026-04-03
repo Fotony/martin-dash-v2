@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖥️ Mission Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#0d1117', card: '#161b22', border: '#30363d', text: '#c9d1d9' },
+                        accent: { green: '#3fb950', red: '#f85149', yellow: '#d29922', blue: '#58a6ff', purple: '#bc8cff' }
+                    },
+                    animation: { 'pulse-slow': 'pulse 3s infinite', 'fade-in': 'fadeIn 0.5s ease-out' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background: linear-gradient(135deg, #0d1117 0%, #010409 100%); min-height: 100vh; }
+        .glass-card { background: rgba(22, 27, 34, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(48, 54, 61, 0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+        .gradient-text { background: linear-gradient(to right, #58a6ff, #bc8cff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body class="text-dark-text font-sans antialiased p-6">
+    
+    <header class="flex justify-between items-center mb-8 animate-fade-in">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center border border-accent-blue/30">🖥️</div>
+            <h1 class="text-3xl font-extrabold tracking-tight gradient-text">Mission Control</h1>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-accent-green/10 border border-accent-green/20">
+            <div class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></div>
+            <span class="text-xs font-medium text-accent-green">LIVE DATA</span>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Crypto -->
+        <div class="glass-card rounded-2xl p-5 transform hover:scale-[1.02] transition-all duration-300">
+            <h2 class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider">Crypto Markets</h2>
+            <div class="space-y-4 font-mono">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">BTC</span>
+                    <span class="text-lg font-bold text-accent-green">$94,521</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">ETH</span>
+                    <span class="text-lg font-bold text-accent-yellow">$3,245</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">GNK</span>
+                    <span class="text-lg font-bold text-accent-yellow">$0.73</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DeFi -->
+        <div class="glass-card rounded-2xl p-5 transform hover:scale-[1.02] transition-all duration-300">
+            <h2 class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider">DeFi Health</h2>
+            <div class="space-y-4 font-mono">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Aave</span>
+                    <span class="text-accent-green">1.85 SAFE</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Jupiter</span>
+                    <span class="text-accent-green">2.10 SAFE</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Macro -->
+        <div class="glass-card rounded-2xl p-5 transform hover:scale-[1.02] transition-all duration-300">
+            <h2 class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider">Macro Data</h2>
+            <div class="space-y-4 font-mono">
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Oil (Brent)</span>
+                    <span class="text-accent-red">$112.50</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-gray-300">Gold</span>
+                    <span class="text-accent-blue">$2,345</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flint Insights -->
+        <div class="glass-card rounded-2xl p-5 lg:col-span-1 transform hover:scale-[1.02] transition-all duration-300">
+            <h2 class="text-xs font-bold text-gray-500 mb-4 uppercase tracking-wider">Flint Insights</h2>
+            <div class="space-y-3 text-xs text-gray-400">
+                <div class="p-2 rounded bg-dark-bg/50 border border-gray-800">
+                    <span class="text-accent-blue font-bold">NEFT > $110:</span> Давит на BTC через инфляцию.
+                </div>
+                <div class="p-2 rounded bg-dark-bg/50 border border-gray-800">
+                    <span class="text-accent-yellow font-bold">GNK RISK:</span> Риск ликвидности.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
